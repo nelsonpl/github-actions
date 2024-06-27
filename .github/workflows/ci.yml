@@ -36,6 +36,7 @@ jobs:
 
       - name: Push Docker image
         run: docker tag nodejs-restapi nelsonnpl/nodejs-restapi:latest
+        
       - name: Push to Dockerhub
         run: docker push nelsonnpl/nodejs-restapi:latest
 
