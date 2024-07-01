@@ -26,19 +26,16 @@ jobs:
         run: npm install
 
       # - name: Run tests
-      #   run: npm test
+      #    run: npm test
 
-     # - name: Build Docker image
-     #   run: docker build -t nodejs-restapi .
+      - name: Build Docker image
+        run: docker build -t nodejs-restapi .
 
-    #  - name: Log in to DockerHub
-     #   run: echo "${{ secrets.DOCKERHUB_PASSWORD }}" | docker login -u "${{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
-        
-      - name: Teste
-        run: echo "${{ secrets.DOCKERHUB_USERNAME }}"
+      - name: Log in to DockerHub
+        run: echo "${{ secrets.DOCKERHUB_PASSWORD }}" | docker login -u "${{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
 
-     # - name: Tag Docker image
-     #   run: docker tag nodejs-restapi "${{ env.DOCKERHUB_USERNAME }}"/nodejs-restapi:latest
+      - name: Tag Docker image
+        run: docker tag nodejs-restapi nelsonnpl/nodejs-restapi:latest
 
-    #  - name: Push Docker image to DockerHub
-     #   run: docker push "${{ env.DOCKERHUB_USERNAME }}"/nodejs-restapi:latest
+      - name: Push Docker image to DockerHub
+        run: docker push nelsonnpl/nodejs-restapi:latest
