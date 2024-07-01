@@ -33,9 +33,12 @@ jobs:
 
       - name: Log in to DockerHub
         run: echo "${{ secrets.DOCKERHUB_PASSWORD }}" | docker login -u "${{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
+        
+      - name: Teste
+        run: ${{ secrets.DOCKERHUB_USERNAME }}
 
-      - name: Tag Docker image
-        run: docker tag nodejs-restapi "${{ env.DOCKERHUB_USERNAME }}"/nodejs-restapi:latest
+     # - name: Tag Docker image
+     #   run: docker tag nodejs-restapi "${{ env.DOCKERHUB_USERNAME }}"/nodejs-restapi:latest
 
-      - name: Push Docker image to DockerHub
-        run: docker push "${{ env.DOCKERHUB_USERNAME }}"/nodejs-restapi:latest
+    #  - name: Push Docker image to DockerHub
+     #   run: docker push "${{ env.DOCKERHUB_USERNAME }}"/nodejs-restapi:latest
